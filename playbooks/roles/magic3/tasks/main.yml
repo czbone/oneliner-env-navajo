@@ -1,0 +1,38 @@
+---
+- name: Download and Unarchive latest Magic3 source package
+  include_vars: "vars/main.yml"
+
+- name: Get latest version number
+  shell: curl -s "https://api.github.com/repos/{{ magic3_github_user }}/{{ magic3_github_repo }}/tags" | grep "tarball_url" | sed -n '/[ \t]*"tarball_url"/p' | head -n 1 | sed -e 's/[ \t]*".*":[ \t]*"\(.*\)".*/\1/'
+  register: magic3_url
+- shell: basename {{ magic3_url.stdout }} | sed -e 's/v\([0-9\.]*\)/\1/' > {{ magic3_version_file }}
+  when: magic3_url.stdout is defined
+  
+- name: Download archive
+  unarchive:
+    src: "{{ magic3_url.stdout }}"
+    dest: "{{ magic3_install_path | dirname }}"
+    remote_src: yes
+  when: magic3_url.stdout is defined
+
+- name: Remove directory
+  shell: rm -rf "{{ magic3_install_path }}"
+  when: magic3_url.stdout is defined
+
+- name: Move directory
+  shell: mv "{{ magic3_github_user }}-{{ magic3_github_repo }}-"* "{{ magic3_install_path | basename }}"
+  args:
+    chdir: "{{ magic3_install_path | dirname }}"
+  when: magic3_url.stdout is defined
+
+- name: Clean up directory
+  shell: find ./ -type f -name ".gitkeep" -delete
+  args:
+    chdir: "{{ magic3_install_path }}"
+  when: magic3_url.stdout is defined
+  
+- name: Setup directory
+  shell: chown -R "{{ php_fpm_pool_user }}:{{ php_fpm_pool_group }}" "{{ magic3_install_path | basename }}"
+  args:
+    chdir: "{{ magic3_install_path | dirname }}"
+  when: magic3_url.stdout is defined
