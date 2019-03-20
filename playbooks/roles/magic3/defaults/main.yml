@@ -1,0 +1,9 @@
+#
+# Default configuration
+#
+magic3_github_user: "magic3org"
+magic3_github_repo: "magic3"
+magic3_filename_head: "magic3_"
+magic3_version_file: "/etc/magic3_version"
+magic3_dir_name: "magic3"
+magic3_install_path: "/var/www/html"
