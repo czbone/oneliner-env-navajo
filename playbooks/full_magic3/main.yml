@@ -25,6 +25,10 @@
     # nodejs
     nodejs_version: "11.x"
 
+    # Magic3 configration
+    # change root directory
+    magic3_install_path: "/var/www/html/www"
+    
   roles:
     - role: geerlingguy.repo-remi
       when: ansible_os_family == 'RedHat'
