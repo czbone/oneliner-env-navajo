@@ -23,16 +23,23 @@ Magic3‰^—p‚É•K—v‚Èƒ\ƒtƒgƒEƒFƒA‚ª‚·‚×‚Ä1‘ä‚ÌƒT[ƒo‚É”[‚Ü‚é‚æ‚¤‚ÉƒpƒbƒP[ƒW‰»‚³‚ê‚
 V‹K‚ÉOS‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚½ƒT[ƒo‚É`root`‚ÅƒƒOƒCƒ“‚µA\’z‚µ‚½‚¢ŠÂ‹«‚ÌƒXƒNƒŠƒvƒg‚ğÀs‚µ‚Ü‚·B
 Š®—¹Œã‚Íˆê’UƒT[ƒo‚ğÄ‹N“®‚µ‚Ä‚­‚¾‚³‚¢B
 
-## WebƒT[ƒo(LEMP)ŠÂ‹«\’z (Š—vŠÔ: –ñ10•ª)
-Linux(L),Nginx(N),MariaDB(M),PHP(P)‚ÌLEMPŠÂ‹«‚ğì¬‚µ‚Ü‚·B
+## NodejsƒeƒXƒgŠÂ‹«\’z
+Linux(L),Nginx(N),MariaDB(M),PHP(P)‚ÌLEMPŠÂ‹«+FFmpeg‚ğì¬‚µAÅV‚ÌMagic3‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·B
 
-### ƒo[ƒWƒ‡ƒ“
-- Nginx 1.14.2
-- PHP 7.3
+### ƒCƒ“ƒXƒg[ƒ‹ƒ\ƒtƒgƒo[ƒWƒ‡ƒ“
+- Nginx 1.15.8
+- PHP 7.3.3
 - MariaDB 5.5.60(CentOS),MySQL 5.7.24(Ubuntu)
+- FFmpeg 4.1.1
 
+### ÅVƒŠƒŠ[ƒX(ÅVƒ^ƒO)”Å
 ```
 $ curl https://raw.githubusercontent.com/czbone/oneliner-env-navajo/master/script/build_magic3.sh | bash
+```
+
+### ÅVƒ\[ƒX”Å
+```
+$ curl https://raw.githubusercontent.com/czbone/oneliner-env-navajo/master/test/build_magic3.sh | bash
 ```
 
 ### ŠÂ‹«\’zŒã‚Ìì‹Æ
@@ -41,7 +48,7 @@ Webƒuƒ‰ƒEƒU‚ÅMagic3‚ÌƒCƒ“ƒXƒg[ƒ‰‚ğÀs‚µƒCƒ“ƒXƒg[ƒ‹‚ğŠ®—¹‚³‚¹‚Ü‚·B
 
 IPƒAƒhƒŒƒX“™‚ÅƒhƒLƒ…ƒƒ“ƒgƒ‹[ƒg‚ÉƒAƒNƒZƒX‚µ‚Ü‚·B
 ```
-http://localhost
+http://localhost/www
 ```
 
 DB‚Ö‚ÌÚ‘±î•ñ‚ª•K—v‚É‚È‚è‚Ü‚·B  
