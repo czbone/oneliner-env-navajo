@@ -26,18 +26,20 @@ Magic3‰^—p‚É•K—v‚Èƒ\ƒtƒgƒEƒFƒA‚ª‚·‚×‚Ä1‘ä‚ÌƒT[ƒo‚É”[‚Ü‚é‚æ‚¤‚ÉƒpƒbƒP[ƒW‰»‚³‚ê‚
 ## NodejsƒeƒXƒgŠÂ‹«\’z
 Linux(L),Nginx(N),MariaDB(M),PHP(P)‚ÌLEMPŠÂ‹«+FFmpeg‚ğì¬‚µAÅV‚ÌMagic3‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·B
 
-### ƒCƒ“ƒXƒg[ƒ‹ƒ\ƒtƒgƒo[ƒWƒ‡ƒ“
+### ƒ\ƒtƒgƒo[ƒWƒ‡ƒ“
 - Nginx 1.15.8
 - PHP 7.3.3
 - MariaDB 5.5.60(CentOS),MySQL 5.7.24(Ubuntu)
 - FFmpeg 4.1.1
 
-### ÅVƒŠƒŠ[ƒX(ÅVƒ^ƒO)”Å
+### ÅVƒŠƒŠ[ƒX”Å
+ÅVƒ^ƒO‚ÌƒpƒbƒP[ƒW‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·B
 ```
 $ curl https://raw.githubusercontent.com/czbone/oneliner-env-navajo/master/script/build_magic3.sh | bash
 ```
 
 ### ÅVƒ\[ƒX”Å
+Œ»İ‚ÌƒŒƒ|ƒWƒgƒŠ‚Ìƒ\[ƒX‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·B
 ```
 $ curl https://raw.githubusercontent.com/czbone/oneliner-env-navajo/master/test/build_magic3.sh | bash
 ```
