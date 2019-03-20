@@ -1,6 +1,6 @@
 ---
-- name: Download and Unarchive latest Magic3 source package
-  include_vars: "defaults/main.yml"
+#- name: Download and Unarchive latest Magic3 source package
+#  include_vars: "defaults/main.yml"
 
 - name: Get latest version number
   shell: curl -s "https://api.github.com/repos/{{ magic3_github_user }}/{{ magic3_github_repo }}/tags" | grep "tarball_url" | sed -n '/[ \t]*"tarball_url"/p' | head -n 1 | sed -e 's/[ \t]*".*":[ \t]*"\(.*\)".*/\1/'
