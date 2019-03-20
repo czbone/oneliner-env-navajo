@@ -77,7 +77,7 @@
 
 - name: Clean up unused config files
   file:
-    path: "{{ nginx_conf_dir }}/{{ items }}"
+    path: "{{ nginx_conf_dir }}/{{ item }}"
     state: absent
   with_items:
     - fastcgi.conf.default
