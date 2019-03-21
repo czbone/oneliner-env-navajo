@@ -47,6 +47,17 @@
     - magic3
 
   tasks:
+    - name: Install base command for CentOS by yum
+      yum:
+        name:
+          - unzip
+      when: ansible_os_family == 'RedHat'
+    - name: Install base command for Ubuntu by apt
+      apt:
+        name:
+          - unzip
+      when: ansible_os_family == 'Debian'
+
     - selinux: state=disabled
       when: ansible_os_family == 'RedHat'
       become: True
