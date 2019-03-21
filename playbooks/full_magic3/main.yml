@@ -80,9 +80,11 @@
       when: ansible_os_family == 'RedHat'
     - file: path="/var/lib/php/wsdlcache" owner=nginx group=nginx mode=0770
       when: ansible_os_family == 'RedHat'
-      
+    
+    # modify nginx config file
     # fix PHP_SELF value problem
     - template: src="fastcgi_params.j2" dest="/etc/nginx/fastcgi_params" owner=root group=root mode=0644
+    - template: src="mime.types.j2" dest="/etc/nginx/mime.types" owner=root group=root mode=0644
     
     # add root shell environment
     - template: src="root_bash_profile.j2" dest="/root/.bash_profile" owner=root group=root mode=0644
