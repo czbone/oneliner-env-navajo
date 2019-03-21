@@ -47,12 +47,13 @@
     - magic3
 
   tasks:
-    - name: Install base command for CentOS by yum
+    # Install additional command
+    - name: Install additional command for CentOS by yum
       yum:
         name:
           - unzip
       when: ansible_os_family == 'RedHat'
-    - name: Install base command for Ubuntu by apt
+    - name: Install additional command for Ubuntu by apt
       apt:
         name:
           - unzip
@@ -115,3 +116,13 @@
     - name: restart firewalld
       service: name=firewalld state=restarted enabled=yes
       when: ansible_os_family == 'RedHat'
+
+    # make directry for Nodejs
+    - name: make Nodejs application directory
+      file: path=/var/www/node-app state=directory owner=root group=root mode=0755
+
+    # output completed message
+    - debug: msg="##############################################"
+    - debug: msg="Building Nodejs environment completed"
+    - debug: msg="Magic3 is located in {{ magic3_install_path }}"
+    - debug: msg="Complete installation by accessing to http://localhost/www"
