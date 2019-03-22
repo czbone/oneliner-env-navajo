@@ -123,7 +123,8 @@
 
     # output completed message
     - debug:
-      msg:
+      msg: "{{ item }}"
+      with_items:
         - "Building Nodejs environment completed!"
         - "Magic3 is located in {{ magic3_install_path }}"
         - "Complete installation by accessing to http://localhost/www"
