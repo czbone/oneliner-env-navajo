@@ -122,7 +122,8 @@
       file: path=/var/www/node-app state=directory owner=root group=root mode=0755
 
     # output completed message
-    - debug: msg="##############################################"
-    - debug: msg="Building Nodejs environment completed"
-    - debug: msg="Magic3 is located in {{ magic3_install_path }}"
-    - debug: msg="Complete installation by accessing to http://localhost/www"
+    - debug:
+      msg:
+        - "Building Nodejs environment completed!"
+        - "Magic3 is located in {{ magic3_install_path }}"
+        - "Complete installation by accessing to http://localhost/www"
