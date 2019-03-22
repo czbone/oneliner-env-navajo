@@ -122,9 +122,11 @@
       file: path=/var/www/node-app state=directory owner=root group=root mode=0755
 
     # output completed message
-    - debug:
-      msg: "{{ item }}"
-      with_items:
-        - "Building Nodejs environment completed!"
-        - "Magic3 is located in {{ magic3_install_path }}"
-        - "Complete installation by accessing to http://localhost/www"
+    - name: building completed message
+      vars:
+        msg: |
+             Building Nodejs environment completed!
+             Magic3 is located in {{ magic3_install_path }}
+             Complete installation by accessing to http://localhost/www
+      debug:
+        msg: "{{ msg.split('\n') }}"
