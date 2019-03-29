@@ -32,7 +32,7 @@ Linux(L),Nginx(N),MariaDB(M),PHP(P)のLEMP環境+FFmpegを作成し、最新のMagic3をイン
 - MariaDB 5.5.60(CentOS),MySQL 5.7.24(Ubuntu)
 - FFmpeg 4.1.1
 
-### 最新リリース版
+### 最新安定版
 最新タグのパッケージをインストールします。
 ```
 $ curl https://raw.githubusercontent.com/czbone/oneliner-env-navajo/master/script/build_magic3.sh | bash
