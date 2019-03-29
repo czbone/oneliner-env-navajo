@@ -14,10 +14,20 @@
     mysql_root_password: "root"
 
     # sample database for Japanese testing
+    # MySQL version
     mysql_databases:
       - name: "testdb"
         collation: utf8_general_ci
     mysql_users:
+      - name: "testuser"
+        password: "test"
+        priv: "testdb.*:ALL"
+
+    # MariaDB version
+    mariadb_databases:
+      - name: "testdb"
+        collation: utf8_general_ci
+    mariadb_users:
       - name: "testuser"
         password: "test"
         priv: "testdb.*:ALL"
@@ -132,4 +142,4 @@
              Magic3 is located in {{ magic3_install_path }}
              Complete installation by accessing to http://localhost/www
       debug:
-        msg: "{{ msg.split('\n') }}"
+        msg: "{{ msg.split('\n')[:-1] }}"

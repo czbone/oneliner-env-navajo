@@ -46,10 +46,10 @@ php_packages:
 # MariaDB configuration
 #
 # configure server encoding
-mysql_config_include_files:
-  - name: 'server.cnf'
-    src: '{{ playbook_dir }}/templates/server.cnf'
-    force: true
+#mysql_config_include_files:
+#  - name: 'server.cnf'
+#    src: '{{ playbook_dir }}/templates/server.cnf'
+#    force: true
 
 #
 # Nginx configuration
