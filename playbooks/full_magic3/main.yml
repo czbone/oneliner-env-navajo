@@ -42,9 +42,9 @@
       when: ansible_os_family == 'Debian'
     - geerlingguy.nodejs
     - geerlingguy.redis
-    - nginx_build
-    - ffmpeg_build
-    - magic3
+#    - nginx_build
+#    - ffmpeg_build
+#    - magic3
 
   pre_tasks:
     - name: Install the MySQL repo.
