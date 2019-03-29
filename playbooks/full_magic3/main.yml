@@ -45,9 +45,9 @@
       when: ansible_os_family == 'Debian'
     - geerlingguy.nodejs
     - geerlingguy.redis
-    - nginx_build
-    - ffmpeg_build
-    - magic3
+#    - nginx_build
+#    - ffmpeg_build
+#    - magic3
 
   tasks:
     # Install additional command
