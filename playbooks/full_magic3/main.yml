@@ -28,23 +28,6 @@
     # Magic3 configration
     # change root directory
     magic3_install_path: "/var/www/html/www"
-    
-  roles:
-    - role: geerlingguy.repo-remi
-      when: ansible_os_family == 'RedHat'
-    - geerlingguy.ntp
-    - geerlingguy.nginx
-    - geerlingguy.php-versions
-    - geerlingguy.php
-    - geerlingguy.php-mysql
-    - geerlingguy.mysql
-    - role: geerlingguy.firewall
-      when: ansible_os_family == 'Debian'
-    - geerlingguy.nodejs
-    - geerlingguy.redis
-#    - nginx_build
-#    - ffmpeg_build
-#    - magic3
 
   pre_tasks:
     - name: Install the MySQL repo.
@@ -62,6 +45,23 @@
         mysql_pid_file: /var/run/mysqld/mysqld.pid
         mysql_socket: /var/lib/mysql/mysql.sock
       when: ansible_os_family == "RedHat"
+
+  roles:
+#    - role: geerlingguy.repo-remi
+#      when: ansible_os_family == 'RedHat'
+    - geerlingguy.ntp
+    - geerlingguy.nginx
+    - geerlingguy.php-versions
+    - geerlingguy.php
+    - geerlingguy.php-mysql
+    - geerlingguy.mysql
+    - role: geerlingguy.firewall
+      when: ansible_os_family == 'Debian'
+    - geerlingguy.nodejs
+    - geerlingguy.redis
+#    - nginx_build
+#    - ffmpeg_build
+#    - magic3
       
   tasks:
     # Install additional command
