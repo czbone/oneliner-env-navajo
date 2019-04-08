@@ -28,9 +28,9 @@ Linux(L),Nginx(N),MariaDB(M),PHP(P)のLEMP環境+FFmpegを作成し、最新のMagic3をイン
 
 ### ソフトバージョン
 - Nginx 1.15.8
-- PHP 7.3.3
-- MariaDB 5.5.60(CentOS),MySQL 5.7.24(Ubuntu)
-- FFmpeg 4.1.1
+- PHP 7.3.4
+- MariaDB 10.3.14(CentOS),MySQL 5.7.24(Ubuntu)
+- FFmpeg 4.1.3
 
 ### 最新安定版
 最新タグのパッケージをインストールします。
