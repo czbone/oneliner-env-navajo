@@ -4,26 +4,16 @@
   vars_files:
     - vars/main.yml
     - vars/www_{{ ansible_os_family }}.yml
-    
+
   vars:
-    ##### Must check PHP version! #####
+    ### PHP version ###
     php_version: '7.3'
     php_default_version_debian: "7.3"
-    
-    # DB root initial password
-    mysql_root_password: "root"
+
+    ### MariaDB version ###
+    mariadb_version: '10.3'
 
     # sample database for Japanese testing
-    # MySQL version
-    mysql_databases:
-      - name: "testdb"
-        collation: utf8_general_ci
-    mysql_users:
-      - name: "testuser"
-        password: "test"
-        priv: "testdb.*:ALL"
-
-    # MariaDB version
     mariadb_databases:
       - name: "testdb"
         collation: utf8_general_ci
@@ -31,6 +21,7 @@
       - name: "testuser"
         password: "test"
         priv: "testdb.*:ALL"
+        host: "127.0.0.1"
 
     # nodejs
     nodejs_version: "11.x"
@@ -38,7 +29,7 @@
     # Magic3 configration
     # change root directory
     magic3_install_path: "/var/www/html/www"
-    
+
   roles:
     - role: geerlingguy.repo-remi
       when: ansible_os_family == 'RedHat'
@@ -47,14 +38,11 @@
     - geerlingguy.php-versions
     - geerlingguy.php
     - geerlingguy.php-mysql
-    - role: bertvv.mariadb
-      when: ansible_os_family == 'RedHat'
-    - role: geerlingguy.mysql
-      when: ansible_os_family == 'Debian'
     - role: geerlingguy.firewall
       when: ansible_os_family == 'Debian'
     - geerlingguy.nodejs
     - geerlingguy.redis
+    - mariadb
     - nginx_build
     - ffmpeg_build
     - magic3
@@ -91,8 +79,7 @@
         src: etc_my.cnf.d_server.cnf.j2
         dest: "{{ mariadb_config_server }}"
       notify: restart mariadb
-      when: ansible_os_family == 'RedHat'
-  
+
     # fix directory ownership for Nginx
     - file: path=/var/log/nginx owner=root group=root mode=0700
       when: ansible_os_family == 'RedHat'
