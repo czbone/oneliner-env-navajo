@@ -75,9 +75,6 @@ fi
 
 declare INSTALL_PACKAGE_CMD=""
 if [ $OS == 'CentOS' ]; then
-    #INSTALL_PACKAGE_CMD="yum -y install"
-    # subscription-manager repos --enable ansible-2.8-for-rhel-8-x86_64-rpms ## RHEL 8
-    # subscription-manager repos --enable rhel-7-server-ansible-2.8-rpms ## RHEL 7
     yum -y install epel-release python-devel openssl-devel gcc
     yum -y install python-pip
     pip install --upgrade pip
@@ -87,6 +84,9 @@ elif [ $OS == 'Ubuntu' ]; then
     # apt -y install software-properties-common
     # apt-add-repository --yes --update ppa:ansible/ansible
     $INSTALL_PACKAGE_CMD ansible
+else
+    echo "${OS} is unsupported"
+    exit 1
 fi
 
 # Download the latest repository archive
