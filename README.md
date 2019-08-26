@@ -27,10 +27,10 @@ Magic3‰^—p‚É•K—v‚Èƒ\ƒtƒgƒEƒFƒA‚ª‚·‚×‚Ä1‘ä‚ÌƒT[ƒo‚É”[‚Ü‚é‚æ‚¤‚ÉƒpƒbƒP[ƒW‰»‚³‚ê‚
 Linux(L),Nginx(N),MariaDB(M),PHP(P)‚ÌLEMPŠÂ‹«+FFmpeg‚ğì¬‚µAÅV‚ÌMagic3‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·B
 
 ### ƒ\ƒtƒgƒo[ƒWƒ‡ƒ“
-- Nginx 1.15.8
-- PHP 7.3.4
-- MariaDB 10.3.14(CentOS),MySQL 5.7.24(Ubuntu)
-- FFmpeg 4.1.3
+- Nginx 1.17.0
+- PHP 7.3.8
+- MariaDB 10.3.17(CentOS),MySQL 5.7.24(Ubuntu)
+- FFmpeg 4.2
 
 ### ÅVˆÀ’è”Å
 ÅVƒ^ƒO‚ÌƒpƒbƒP[ƒW‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·B

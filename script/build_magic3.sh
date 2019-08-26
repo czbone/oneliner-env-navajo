@@ -2,14 +2,15 @@
 # 
 # Script Name: build_magic3.sh
 #
-# Version:      0.1.0
+# Version:      0.2.0
 # Author:       Naoki Hirata
-# Date:         2019-03-19
+# Date:         2019-08-26
 # Usage:        build_magic3.sh [-test]
 # Options:      -test      test mode execution with the latest source package
 # Description:  This script builds Magic3 system on LEMP(Linux Nginx, MariaDB, Linux) and other full server environment with the one-liner command.
 # Version History:
-#               0.1.0
+#               0.1.0 First release
+#               0.2.0 Change for nstalling latest Ansible
 # License:      MIT License
 
 # Define macro parameter
@@ -75,6 +76,7 @@ fi
 
 declare INSTALL_PACKAGE_CMD=""
 if [ $OS == 'CentOS' ]; then
+    echo "INSTALL LATEST Ansible"
     yum -y install epel-release python-devel openssl-devel gcc
     yum -y install python-pip
     pip install --upgrade pip
