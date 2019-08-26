@@ -1,5 +1,6 @@
 ---
 - geerlingguy.repo-remi
+- geerlingguy.git
 - geerlingguy.ntp
 - geerlingguy.nginx
 - geerlingguy.php-versions
