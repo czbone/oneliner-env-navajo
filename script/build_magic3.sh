@@ -76,8 +76,12 @@ fi
 declare INSTALL_PACKAGE_CMD=""
 if [ $OS == 'CentOS' ]; then
     INSTALL_PACKAGE_CMD="yum -y install"
+    # subscription-manager repos --enable ansible-2.8-for-rhel-8-x86_64-rpms ## RHEL 8
+    subscription-manager repos --enable rhel-7-server-ansible-2.8-rpms ## RHEL 7
 elif [ $OS == 'Ubuntu' ]; then
     INSTALL_PACKAGE_CMD="apt -y install"
+    apt -y install software-properties-common
+    apt-add-repository --yes --update ppa:ansible/ansible
 fi
 
 $INSTALL_PACKAGE_CMD ansible
