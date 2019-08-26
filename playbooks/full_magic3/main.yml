@@ -6,9 +6,6 @@
     - vars/www_{{ ansible_os_family }}.yml
 
   vars:
-    ### GIt version ###
-    git_version: "2.23.0"
-    
     ### PHP version ###
     php_version: '7.3'
     php_default_version_debian: "7.3"
