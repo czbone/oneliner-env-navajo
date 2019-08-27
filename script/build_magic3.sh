@@ -76,19 +76,23 @@ fi
 
 declare INSTALL_PACKAGE_CMD=""
 if [ $OS == 'CentOS' ]; then
-    echo "INSTALL LATEST Ansible"
-    yum -y install epel-release python-devel openssl-devel gcc
-    yum -y install python-pip
-    pip install --upgrade pip
-    pip install ansible
+    INSTALL_PACKAGE_CMD="yum -y install"
+    
+    # Repository update for latest ansible
+    yum -y install epel-release
 elif [ $OS == 'Ubuntu' ]; then
-    INSTALL_PACKAGE_CMD="apt -y install"
-    # apt -y install software-properties-common
-    # apt-add-repository --yes --update ppa:ansible/ansible
+    if ! type -P ansible >/dev/null ; then
+        INSTALL_PACKAGE_CMD="apt -y install"
+    
+        # Repository update for ansible
+        apt install software-properties-common
+        apt-add-repository --yes --update ppa:ansible/ansible
+    fi
+fi
+
+# Install ansible command if not exists
+if [ "$INSTALL_PACKAGE_CMD" != '' ]; then
     $INSTALL_PACKAGE_CMD ansible
-else
-    echo "${OS} is unsupported"
-    exit 1
 fi
 
 # Download the latest repository archive
